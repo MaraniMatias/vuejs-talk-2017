@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Vue.JS - Talk</title>
+  <link rel="stylesheet" href="./lib/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+  <link rel="stylesheet" href="./css/reveal.min.css">
+  <!--
+  <link rel="stylesheet" href="./css/theme/solarized.css">
+  -->
+  <link rel="stylesheet" href="./css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="./lib/css/zenburn.css">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChlid(link);
+  </script>
+</head>
+
+<!--
+<body>
+-->
+
+<body style="background-color: #004d40;  text-shadow: 1px 1px #000;" spellcheck="false">
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <section data-background-color="#044" data-background-image="./img/vuejs-logo.png">
+          <h1>Vue.JS</h1>
+          <p>The Progressive JavaScript Framework</p>
+          <!--<a href="vuejs.org">vuejs.org</a>-->
+        </section>
+        <section>
+          <h3>Marani Matias Ezequiel</h3>
+          <p>Estudiante de ing. sistemas && Desarrollador && Profesor</p>
+          <p><i class="fa fa-github" aria-hidden="true"></i> || <i class="fa fa-twitter" aria-hidden="true"></i> @maranimatias</p>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Un poco de historia.</h2>
+          <p>Creado por Evan You, cuando estaba trabajando en Google Creative Labs.</p>
+        </section>
+        <section>
+          <p>Evan You:</p>
+          <p>"I figured, what if I could just extract the part that I really liked about Angular and bulid something really lightweight without all the extra concepts involved?"</p>
+        </section>
+
+        <!--<section data-background-color="#eee" data-background-image="./img/github-stars.png" data-background-size="60%"></section>-->
+        <section>
+          <h2>¿Qué es Vue?</h2>
+          <ul>
+            <li>Es un Framework JavaScript código abierto para construir interfaces de usuario</li>
+            <li>Enfocado en el patron MV-viewModel</li>
+            <li>Posee conceptos de Angular y React</li>
+            <li>Con menor complejidad</li>
+            <li>Primer lanzamiento en 2014, la v2 en abril del 2016</li>
+          </ul>
+        </section>
+        <section data-background-color="#eee">
+          <p>Tendencia de Github star</p>
+          <p>
+            <img src="./img/timqian.png"></img>
+            <a href="http://www.timqian.com/star-history/#facebook/react&angular/angular&vuejs/vue">timqian.com/star-history</a>
+          </p>
+        </section>
+        <section data-background-color="#b05050" data-background-image="./img/angular-logo.png" data-background-size="70%">
+          <p>Comparando con Angular.JS - El original.</p>
+          <ul>
+            <li>Similitudes, ng-if, ng-show, ng-repeat.</li>
+            <li>Directivas y Filtros.</li>
+            <li>Angular actualiza directamente el DOM.</li>
+          </ul>
+        </section>
+        <section data-background-color="#408090" data-background-image="./img/react-logo.png" data-background-size="70%">
+          <p>Comparando con React.</p>
+          <ul>
+            <li>React es una librería.</li>
+            <!-- <li>Componentes de Vue más livianos.</li>-->
+            <!--<li>Crear aplicaciones sin la necesidad de preprocesadores.</li>-->
+            <li>Vue usa template, React JSX.</li>
+            <li>Mejor uso del Virtual DOM.</li>
+            <li>Usar Redux es posible, Vuex librería oficial.</li>
+            <li>React Native - Weex.</li>
+            <!--<li>VueJS con licencia MIT</li>-->
+          </ul>
+        </section>
+        <section data-background-color="#a04040" data-background-image="./img/angular4-logo.png" data-background-size="70%">
+          <p>Comparando con Angular - 2, <strike>3</strike>, <b>4</b>.</p>
+          <ul>
+            <li>TypeScript</li>
+            <li>Vue posee mayor flexibilidad, Angular define una estructura.</li>
+            <li>Vue prevé escalar aplicaciones.</li>
+            <li>El core de Vue es 4 veces más liviano.</li>
+          </ul>
+        </section>
+        <!--<section data-background-color="#eee" data-background-image="./img/size.png" data-background-size="60%"></section>-->
+        <!--<section>
+          <p>Comparando Vue con otros Framework.</p>
+          <ul>
+            <li><a href="http://www.dotnetcurry.com/vuejs/1372/vuejs-vs-angular-reactjs-compare">vuejs-vs-angular-reactjs-compare</a></li>
+            <li><a href="http://www.stefankrause.net/js-frameworks-benchmark5/webdriver-ts/table.html">Results for js web frameworks</a></li>
+          </ul>
+        </section>-->
+      </section>
+
+      <section data-transition="slide-in fade-out">
+        <h2>Lo más importante</h2>
+        <p class="fragment">Progresivo.</p>
+        <p class="fragment">Renderizado declarativo.</p>
+        <p class="fragment">Reactivo.</p>
+        <p class="fragment">Componente functional.</p>
+        <!--<p class="fragment">Puede usar un archivo de componentes (.vue) .</p>-->
+      </section>
+
+      <section>
+        <section>
+          <h2>Basic App Vue</h2>
+        </section>
+        <section>
+          <pre><code class="html" data-trim contenteditable>&lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;</code></pre>
+          <pre><code class="html" data-trim contenteditable>
+          &lt;body&gt;
+            <div id="app">
+              <h1>{{ message }}</h1>
+              <input v-model="message">
+            </div>
+            <script>
+              var app = new Vue({
+                el: '#app',
+                data: {
+                  message: 'Welcome to your Vue.js app!'
+                }
+              })
+            </script>
+          &lt;body&gt;
+          </code></pre>
+        </section>
+        <section>
+          <p>Un Componente Vue</p>
+        </section>
+        <section>
+          <pre><code class="javascript" data-trim contenteditable>
+            Vue.component('hello-component', {
+              template: '#hello',
+              data: function () {
+                return {
+                  message: 'Welcome to your Vue.js app!'
+                }
+              }
+            });
+          </code></pre>
+          <pre><code class="html" data-trim contenteditable>
+            <template id="hello">
+              <div>
+                <h1>{{ message }}</h1>
+                <input v-model="message">
+              </div>
+            </template>
+          </code></pre>
+          <pre><code class="html" data-trim contenteditable>
+          &lt;body&gt;
+            <div id="app">
+              <hello-component></hello-component>
+            </div>
+          &lt;/body&gt;
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Métodos</h2>
+        </section>
+        <section>
+          <p>Methods</p>
+          <pre><code class="html" data-trim contenteditable>
+            <template id="hello">
+              <div>
+                <h1>{{ message }}</h1>
+                <button v-on:click="change('message')">change</button>
+              </div>
+            </template>
+          </code></pre>
+          <pre><code class="javascript" data-trim contenteditable>
+            Vue.component('hello-component', {
+              template: '#hello',
+              data: function () {
+                return { message: 'Welcome to your Vue.js app!' }
+              },
+              methods: {
+                change: function(value) {
+                  this.message = "new " + value;
+                }
+              }
+            });
+          </code></pre>
+        </section>
+        <section>
+          <p>Eventos</p>
+          <pre><code class="html" data-trim contenteditable>
+            <button v-on:click="message = 'yo'">Change message</button>
+
+            <button @click="message = 'yo'">Change message</button>
+          </code></pre>
+          <p>Eventos para teclas</p>
+          <pre><code class="html" data-trim contenteditable>
+          <input v-on:keyup.enter="submit()">
+
+          <input @keyup.alt.67="clear()">
+
+          <div @click.ctrl="doSomething()">Do something</div>
+          </code></pre>
+          <p>El evento submit no recargara la pagina.</p>
+          <pre><code class="html" data-trim contenteditable>
+            <form v-on:submit.prevent="onSubmit()"></form>
+          </code></pre>
+        </section>
+        <section>
+          <h2>Propiedades calculadas</h2>
+        </section>
+        <section>
+          <p>computed</p>
+          <pre><code class="html" data-trim contenteditable>
+            <template id="hello">
+              <div>
+                <p>Original message: "{{ message }}"</p>
+                <p>Computed reversed message: "{{ reversedMessage }}"</p>
+              </div>
+            </template>
+          </code></pre>
+          <pre><code class="javascript" data-trim contenteditable>
+            Vue.component('hello-component', {
+              template: '#hello',
+              data: function () {
+                return { message: 'Welcome to your Vue.js app!' }
+              },
+              methods: { /* ... */ },
+              computed: {
+                reversedMessage: function () {
+                  return this.message.split('').reverse().join('')
+                }
+              }
+            });
+          </code></pre>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Ciclo de vide de un Componente</h2>
+        </section>
+        <section data-transition="slide fade-out" data-background-color="#efefef" data-background-image="./img/lifecycle2a.png" data-background-size="75%"></section>
+        <section data-background-color="#efefef" data-background-image="./img/lifecycle2b.png" data-background-size="75%"></section>
+        <section data-background-color="#efefef" data-background-image="./img/lifecycle2c.png" data-background-size="75%"></section>
+        <section>
+          <p>Usar los eventos en nuestro componente</p>
+          <pre><code class="javascript" data-trim contenteditable>
+              Vue.component('hello-component', {
+                template: '#hello',
+                data: function () {
+                  return { message: 'Welcome to your Vue.js app!' }
+                },
+                methods: { /* ... */ },
+                computed: { /* ... */ },
+                beforeCreate: function(){ /* ... */ },
+                created: function(){ /* ... */ },
+                beforeMount: function(){ /* ... */ },
+                mounted: function(){ /* ... */ }
+                beforeUpdate: function(){ /* ... */ },
+                updated: function(){ /* ... */ }
+              });
+            </code></pre>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>directives && filters</h2>
+        </section>
+        <section>
+          <p>Directivas de control de flujo</p>
+          <!--<p>v-if, v-else, v-else-if, v-show, v-for</p>-->
+          <pre><code class="html" data-trim contenteditable>
+              <p v-if="Math.random() > 0.5"> Mayor </p>
+              &lt;p v-else&gt; Menor &lt;/p&gt;
+            </code></pre>
+          <pre><code class="html" data-trim contenteditable>
+              <div v-show="Math.random() > 0.5">
+                <p> Math.random() Mayor que 0.5</p>
+              </div>
+            </code></pre>
+          <pre><code class="html" data-trim contenteditable>
+              <ul>
+                <li v-for="item in items">
+                  {{ item.message }}
+                </li>
+                <li v-for="(item, index) in items">
+                  {{ parentMessage +" - "+ index +" - "+ item.message }}
+                </li>
+              </ul>
+              <div v-for="(value, key) in object">
+                {{ key + ": " + value }}
+              </div>
+            </code></pre>
+        </section>
+        <!--
+          <section>
+            <p>atributos vinculados HTML</p>
+            <pre><code class="html" data-trim contenteditable>
+              <img src="{{ imgURL }}">
+              <img v-bind:src="imgURL">
+            </code></pre>
+            <p>o sintaxis abreviada <b>:</b></p>
+            <pre><code class="html" data-trim contenteditable>
+              <img :src="imgURL">
+            </code></pre>
+          </section>
+          -->
+        <section>
+          <p>Directivas personalizadas</p>
+          <pre><code class="html" data-trim contenteditable>
+              &lt;input v-focus&gt;
+            </code></pre>
+          <pre><code class="javascript" data-trim contenteditable>
+              // Register a global custom directive called v-focus
+              Vue.directive('focus', {
+                inserted: function (el) {
+                  el.focus();
+                }
+              })
+            </code></pre>
+          <p>Podemos declara directivas locales para cada componente.</p>
+        </section>
+
+        <section>
+          <p>Filtros</p>
+          <pre><code class="html" data-trim contenteditable>
+              <p>{{ message | capitalize }}</p>
+            </code></pre>
+          <pre><code class="javascript" data-trim contenteditable>
+              Vue.filter('capitalize', function (value) {
+                if (!value) return '';
+                value = value.toString();
+                return value.charAt(0).toUpperCase() + value.slice(1);
+              });
+            </code></pre>
+          <ul>
+            <li><a href="https://github.com/jofftiquez/morphling">morphling</a></li>
+            <li><a href="https://github.com/freearhey/vue2-filters">vue2-filters</a></li>
+            <li><a href="https://github.com/jofftiquez/morphling">vue-currency-filter</a></li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Componentes padres e hijos</h2>
+        </section>
+        <section data-background-color="#eee">
+          <p>Comunicación entre padres e hijos.</p>
+          <img src="./img/props-events.png" style="max-width: 50%;"></img>
+        </section>
+        <!--<section>
+            <p>Definir propiedades de un componente.</p>
+            <pre><code class="html" data-trim contenteditable>
+              <template id="hello">
+                <div>
+                  <h1>{{ message }}</h1>
+                  <h1>{{ messageNew }}</h1>
+                </div>
+              </template>
+            </code></pre>
+            <pre><code class="javascript" data-trim contenteditable>
+              Vue.component('hello-component', {
+                template: '#hello',
+                props: ['messageNew'],
+                data: function () {
+                  return { message: 'Welcome to your Vue.js app!' }
+                }
+              });
+            </code></pre>
+            <pre><code class="html" data-trim contenteditable>
+              <div id="app">
+                <hello-component message-new="msg props"></hello-component>
+                <hello-component v-bind:message-new="msg props"></hello-component>
+              </div>
+            </code></pre>
+          </section> -->
+        <section>
+          <p>Eventos Personalizados</p>
+          <pre><code class="html" data-trim contenteditable>
+              <template id="parent">
+                <child v-bind:clicks="count" v-on:count="mParent"></child>
+                <child :clicks="count" @count="mParent"></child>
+              </template>
+            </code></pre>
+          <pre><code class="javascript" data-trim contenteditable>
+              Vue.component('parent', {
+                template: '#parent',
+                data: function () { return { count: 0 } },
+                methods: {
+                  mParent: function (value) { this.count += value; }
+                }
+              });
+              Vue.component('child', {
+                props: ['clicks'],
+                template: '<button @click="mChild">{{clicks}}</button>',
+                methods: {
+                  mChild: function () { this.$emit('count', 5); }
+                }
+              });
+            </code></pre>
+        </section>
+
+        <section>
+          <p>Comunicación entre componentes sin parentesco</p>
+          <pre><code class="javascript" data-trim contenteditable>
+              var bus = new Vue()
+
+              // in component A's method
+              bus.$emit('id-selected', 1)
+
+              // in component B's created hook
+              bus.$on('id-selected', function (id) {
+                // ...
+              })
+            </code></pre>
+        </section>
+
+        <section>
+          <p>Slots</p>
+          <pre><code class="html" data-trim contenteditable>
+              <div id="app">
+                <h1>el título de padre</h1>
+                <mi-component>
+                  <h3>Titulo</h3>
+                  <p> Se mostrará dentro de Slot </p>
+                </mi-component>
+              </div>
+            </code></pre>
+          <pre><code class="html" data-trim contenteditable>
+              <template id="mi-component">
+                <h2>el título del hijo</h2>
+                <slot>
+                  Esto sólo se mostrará si no hay contenido
+                </slot>
+              </template>
+            </code></pre>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>vue-cli</h2>
+          <pre><code class="shell" data-trim contenteditable>
+              $ # install vue-cli
+              $ npm install --global vue-cli
+
+              $ vue init webpack my-project
+
+              $ cd my-project
+              $ npm install
+              $ npm run dev
+            </code></pre>
+        </section>
+        <section data-transition="slide fade-out" data-background-color="#efefef" data-background-image="./img/devtool.gif" data-background-size="65%"></section>
+        <section>
+          <h2>Componentes de un solo archivo. (.vue)</h2>
+        </section>
+        <section data-transition="slide fade-out" data-background-color="#efefef" data-background-image="./img/vue-component-2.png" data-background-size="88%"></section>
+      </section>
+
+      <section>
+        <section>
+          <h2>Librerías || Plugins</h2>
+          <ul>
+            <li><a href="https://router.vuejs.org/en/">vue-router</a></li>
+            <li><a href="https://vuex.vuejs.org/en/">vuex</a></li>
+            <li><a href="https://github.com/vuejs/vue-touch">vue-touch</a></li>
+            <li><a href="https://github.com/vuejs/vue-rx">vue-rx</a></li>
+          </ul>
+          <pre><code class="javascript" data-trim contenteditable>
+              var Vuex = require('vuex');
+              Vue.use(Vuex);
+            </code></pre>
+        </section>
+        <section>
+          <h1>Vuex</h1>
+        </section>
+        <section data-transition="slide fade-out" data-background-color="#efefef" data-background-image="./img/vuex.png" data-background-size="75%"></section>
+      </section>
+
+      <section data-background-color="#000" data-background-image="./img/book.jpeg">
+        <h2>Bibliografía</h2>
+        <ul>
+          <li><a href="https://vuejs.org/">vuejs.org</a></li>
+          <li>
+            <p>The Majesty of Vue.js 2</p>
+            <!--Alex Kyriakidis, Kostas Maniatis and Evan You-->
+          </li>
+          <li>
+            <p>Learning Vue.js 2</p>
+            <!--Olga Filipova-->
+          </li>
+          <li><a href="https://github.com/vuejs/awesome-vue">awesome-vue</a></li>
+        </ul>
+      </section>
+      <section data-background-color="#044" data-background-image="./img/vuejs-logo.png">
+      </section>
+    </div>
+  </div>
+
+  <script src="./lib/js/head.min.js"></script>
+  <script src="./js/reveal.min.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      //width: "100%",
+      //height: "100%",
+      margin: 0,
+      minScale: 1,
+      maxScale: 4,
+      dependencies: [{ src: 'plugin/markdown/marked.js' }, { src: 'plugin/markdown/markdown.js' }, { src: 'plugin/notes/notes.js', async: true }, { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }]
+    });
+  </script>
+</body>
+
+</html>
