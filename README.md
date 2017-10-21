@@ -2,9 +2,9 @@
 
 The Progressive JavaScript Framework.
 
-Pagina oficial: [vuejs.org](vuejs.org) [doc en español](es-vuejs.github.io/vuejs.org/)
+Pagina oficial: [vuejs.org](http://vuejs.org) [doc en español](http://es-vuejs.github.io/vuejs.org/)
 
-Mi presentación online [vuejs-talk-2017](maranimatias.github.io/vuejs-talk-2017)
+Mi presentación online [vuejs-talk-2017](http://maranimatias.github.io/vuejs-talk-2017)
 
 [Video de la charla](https://www.youtube.com/watch?v=V7d7apaRPGU&index=2&list=PLLA9AGYZ1alD2RwoCMsnfL-p0iVl_oTLm) en [EmprenDevs](emprendevs.com)
 
@@ -19,7 +19,7 @@ Evan You:
 
 #### ¿Qué es Vue?
 * Es un Framework JavaScript código abierto para construir interfaces de usuario
-* Enfocado en el patron [MV-viewModel](en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)
+* Enfocado en el patron [MV-viewModel](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)
 * Posee conceptos de Angular y React
 * Con menor complejidad
 * Primer lanzamiento en 2014, la v2 en abril del 2016
