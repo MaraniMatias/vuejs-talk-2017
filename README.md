@@ -6,7 +6,7 @@ Pagina oficial: [vuejs.org](http://vuejs.org) [doc en español](http://es-vuejs.
 
 Mi presentación online [vuejs-talk-2017](http://maranimatias.github.io/vuejs-talk-2017)
 
-[Video de la charla](https://www.youtube.com/watch?v=V7d7apaRPGU&index=2&list=PLLA9AGYZ1alD2RwoCMsnfL-p0iVl_oTLm) en [EmprenDevs](emprendevs.com)
+[Video de la charla](https://www.youtube.com/watch?v=V7d7apaRPGU&index=2&list=PLLA9AGYZ1alD2RwoCMsnfL-p0iVl_oTLm) en [EmprenDevs](http://emprendevs.com)
 
 ## Contenido de la charla
 
