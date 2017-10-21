@@ -384,7 +384,7 @@ Vue.use(Vuex);
 
 Merece un análisis aparte, la idea es que al tener muchos componentes que requieran tener la misma información se usa un lugar común para que acedan, `state`
 
-_en el [video de la charla](https://www.youtube.com/watch?v=V7d7apaRPGU&index=2&list=PLLA9AGYZ1alD2RwoCMsnfL-p0iVl_oTLm) esta mejor explicado_
+_en el [video de la charla](https://youtu.be/V7d7apaRPGU?list=PLLA9AGYZ1alD2RwoCMsnfL-p0iVl_oTLm&t=1243) esta mejor explicado_
 
 ![](./img/vuex.png)
 
@@ -394,8 +394,6 @@ _en el [video de la charla](https://www.youtube.com/watch?v=V7d7apaRPGU&index=2&
 [vuejs.org](https://vuejs.org/)
 
 [The Majesty of Vue.js 2](https://leanpub.com/vuejs2)
-
-__Alex Kyriakidis, Kostas Maniatis and Evan You__
 
 [Learning Vue.js 2](https://www.packtpub.com/web-development/learning-vuejs-2)
 
