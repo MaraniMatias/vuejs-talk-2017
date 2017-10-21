@@ -40,20 +40,20 @@ fuente [timqian.com/star-history](http://www.timqian.com/star-history/#facebook/
 ### Basic App Vue
 
 ```html
-&lt;body&gt;
+<body>
   <div id="app">
     <h1>{{ message }}</h1>
     <input v-model="message">
   </div>
-<script>
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Welcome to your Vue.js app!'
-  }
-})
-</script>
-&lt;body&gt;
+  <script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Welcome to your Vue.js app!'
+    }
+  })
+  </script>
+<body>
 ```
 
 ### Un Componente Vue
@@ -76,11 +76,11 @@ Vue.component('hello-component', {
 </template>
 ```
 ```html
-&lt;body&gt;
+<body>
   <div id="app">
     <hello-component></hello-component>
   </div>
-&lt;/body&gt;
+</body>
 ```
 
 ### Métodos
@@ -186,7 +186,7 @@ Directivas de control de flujo
 
 ```html
 <p v-if="Math.random() > 0.5"> Mayor </p>
-&lt;p v-else&gt; Menor &lt;/p&gt;
+<p v-else> Menor </p>
 ```
 
 ```html
@@ -227,7 +227,7 @@ o sintaxis abreviada __:__
 Directivas personalizadas
 
 ```html
-&lt;input v-focus&gt;
+<input v-focus>
 ```
 ```javascript
 // Register a global custom directive called v-focus
