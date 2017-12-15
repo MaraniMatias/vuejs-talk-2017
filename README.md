@@ -399,3 +399,4 @@ _en el [video de la charla](https://youtu.be/V7d7apaRPGU?list=PLLA9AGYZ1alD2RwoC
 
 [awesome-vue](https://github.com/vuejs/awesome-vue)
 
+[Tutorial](https://github.com/MaraniMatias/learn-vue)
