@@ -26,8 +26,9 @@ Evan You:
 
 #### Tendencia de Github star
 
-![](./img/timqian.png)
-fuente [timqian.com/star-history](http://www.timqian.com/star-history/#facebook/react&angular/angular&vuejs/vue)
+![Imagen muestra tendencia](./img/timqian.png)
+Fuente [timqian.com/star-history](http://www.timqian.com/star-history/#facebook/react&angular/angular&vuejs/vue) [Github Trending](https://github.com/trending)
+
 
 #### Lo más importante
 <p class="fragment">Progresivo.</p>
